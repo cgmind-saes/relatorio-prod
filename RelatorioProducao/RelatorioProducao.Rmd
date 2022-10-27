@@ -1,0 +1,78 @@
+---
+title: "Relatório Sintético de Produção da Atenção Especializada à Saúde"
+subtitle: "Subtitle of document"
+author: "Author name(s)"
+date: "`r Sys.Date()`"
+### Uncomment the following line if a summary should be shown after the title 
+# abstract: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr."
+
+### Comment or remove the following two lines if NO references are used
+bibliography: [bib/references.bib, bib/packages.bib] # Path to bibliography files 
+csl: bib/sage-harvard.csl                            # Path to reference style file
+
+### Settings for rendering the document:
+output: 
+    cgmindmodelos::word_doc:
+    toc: false
+    language: "en"  # alternative: "de" for German
+    font: "Helvetica" # alternative: "TheSansUHH" 
+### Uncomment the next line if 'language: "de" ' and 'toc: true'
+# toc-title: "Inhaltsverzeichnis"    
+---
+
+```{r setup, include = FALSE}
+# settings --> keep this chunk as it is!
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, 
+  warning = FALSE, error = FALSE, cache = TRUE,
+  fig.path='figs/', cache.path = 'cache/')
+```
+
+```{r load-packages, include = FALSE}
+# Load all your packages that you need later
+library(knitr)
+```
+
+```{r generate-package-refs, include=FALSE}
+# Automatically create a bib database for R packages used above
+knitr::write_bib(
+  x = c(.packages(), 'bookdown', 'rmarkdown', 
+    # Add here now all packages that are loaded above:
+    'knitr'), 
+  file = 'bib/packages.bib')
+```
+
+
+# Intro
+Este relatório sintético apresenta o comparativo da produção na atenção especializada à saúde no SUS, no Brasil, com dados mensais e anuais de 2020, 2021 e 2022.
+O objetivo é disponibilizar informações para tomada de decisão relacionadas ao planejamento da atenção especializada à saúde.
+Período: 2020, 2021 e 2022 (janeiro a agosto) 
+Fonte: SIH e SIA – SUS/Tabnet e Tabwin, tabulado em 11 e 18/10/2022.
+Observação: Os dados de cada mês são consolidados somente após 6 meses, período em que estão sujeitos à atualização.
+
+
+\newpage
+Detalhamento dos procedimentos selecionados para o levantamento dos dados:
+
+ - 	Consultas especializadas: procedimento 0301010072 no SIA/SUS / (“quantidade aprovada” segundo ano/mês de atendimento).
+ - 	Exames: todo o grupo 02 no SIA/SUS e no SIH/SUS / (“quantidade aprovada” segundo ano/mês de atendimento). Os exames podem ser ambulatoriais (a grande parte), mas há uma parte que pode ser hospitalar (ou principal ou especial); no SIH, soma da informação ‘procedimento principal’ e da informação ‘procedimento’ na base SP.
+ - 	UTI adulto: procedimentos 0802010083, 0802010091, 0802010105 e 0802010113. Não incluído os códigos de diárias de UTI para Unidade Coronariana (base SP / (“quantidade aprovada” segundo ano/mês de atendimento).
+ - 	UTI pediátrica: procedimentos 0802010075, 0802010148 e 0802010156 (“quantidade aprovada” segundo ano/mês de atendimento).
+ - 	Internações Clínicas: grupo procedimento 03: Procedimentos clínicos (“AIH aprovada” segundo ano/mês de atendimento)
+ - 	Internações Cirúrgicas: grupo procedimento 04: procedimentos cirúrgicos (“AIH aprovada” segundo ano/mês de atendimento)
+ - 	Cirurgia de câncer: todo o grupo 04 no SIH/SUS com os CID relativos ao câncer – C00 a C97 e D37 a D48, buscando a informação (“quantidade aprovada” segundo ano/mês de atendimento). Fornecido pelo DATASUS (tabulados pela CGSI/TABWIN).
+ - 	Radioterapia: procedimentos considerados para o ano de 2019: 0304010189, 0304010197, 0304010200 e 0304010316 (referentes aos planejamentos) e os novos procedimentos incluídos pela Portaria SAS/MS nº 263/2019 – 0304010367, 0304010375, 0304010383, 0304010391, 0304010405, 0304010413, 0304010421, 0304010430, 0304010448, 0304010456, 0304010464, 0304010472, 0304010480, 0304010499, 0304010502, 0304010510, 0304010529, 0304010537, 0304010545, 0304010553, 0304010561, 0304010570 e 0304010588. (SIA/SUS). Procedimentos considerados para o ano de 2020: somente os novos procedimentos (Portaria SAS/MS nº 263/2019) (SIA/SUS).
+ - 	Quimioterapia: foram considerados todos os procedimentos das seguintes formas de organização no SIA/SUS/ (“quantidade aprovada” segundo ano/mês de atendimento): 030402 a 030408.
+ - 	Radioterapia: procedimentos 0305010093, 0305010107, 0305010115, 305010220, 0305010123, 0305010131, 0305010204 e 0305010212 (“quantidade aprovada” segundo ano/mês de atendimento).
+ - 	Diálise Peritoneal: procedimentos 0305010018, 0305010026, 0305010166, 0305010182, 0702100048, 0702100056, 0702100064, 0702100072 e 0702100080 (“quantidade aprovada” segundo ano/mês de atendimento).
+ - 	Terapia Renal Substitutiva: procedimentos 0305010093, 0305010107, 0305010115, 0305010123, 305010131, 0305010204, 0305010212, 0305010220, 0305010018, 0305010026, 0305010166, 0305010182, 0702100048, 0702100056, 0702100064, 0702100072 e 0702100080 (“quantidade aprovada” segundo ano/mês de atendimento).
+
+
+
+
+
+\newpage
+
+
+# Referências
+
+<!-- All references will be added here automatically. -->
